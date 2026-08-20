@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - Plataforma de Cursos | Ingeniería de Sistemas</title>
+  <meta name="description"
+    content="Formulario de registro para la plataforma de cursos
+             de la Facultad de Ingeniería de Sistemas.">
+              <link rel="stylesheet" href="../estilos.css/estilos.css">
+</head>
+<body>
+
+  <header>
+    <h1>Registro de Nuevo Estudiante</h1>
+    <p>Plataforma de Cursos - Facultad de Ingeniería de Sistemas</p>
+  </header>
+
+  <main>
+    <form
+      action="/api/registro"
+      method="POST"
+      autocomplete="on"
+      id="form-registro"
+    >
+      <fieldset>
+  <legend>Datos Personales</legend>
+
+  <div>
+    <label for="nombre">Nombre completo *</label>
+    <input
+      type="text"
+      id="nombre"
+      name="nombre"
+      placeholder="Ej: Santiago Carrillo"
+      required
+      minlength="5"
+      maxlength="100"
+      autocomplete="name"
+    >
+  </div>
+
+  <div>
+    <label for="email">Correo electrónico institucional *</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="codigo@universidad.edu.co"
+      required
+      autocomplete="email"
+      aria-describedby="email-ayuda"
+    >
+    <p id="email-ayuda">Usar el correo institucional (termina en .edu.co).</p>
+  </div>
+
+  <div>
+    <label for="telefono">Número de teléfono (opcional)</label>
+    <input
+      type="tel"
+      id="telefono"
+      name="telefono"
+      placeholder="+573001234567"
+      pattern="(\+57)?[0-9]{10}"
+      title="Número colombiano: +57 seguido de 10 dígitos"
+      autocomplete="tel"
+    >
+  </div>
+
+  <div>
+    <label for="nacimiento">Fecha de nacimiento *</label>
+    <input
+      type="date"
+      id="nacimiento"
+      name="fecha_nacimiento"
+      required
+      min="1985-01-01"
+      max="2006-12-31"
+      autocomplete="bday"
+    >
+  </div>
+
+</fieldset>
+<fieldset>
+  <legend>Datos de Cuenta</legend>
+
+  <div>
+    <label for="codigo">Código de estudiante *</label>
+    <input
+      type="text"
+      id="codigo"
+      name="codigo_estudiante"
+      placeholder="Ej: 01234567890"
+      required
+      pattern="[0-9]{11}"
+      title="El código debe contener exactamente 11 dígitos numéricos"
+      autocomplete="off"
+    >
+  </div>
+
+  <div>
+    <label for="password">Contraseña *</label>
+    <input
+      type="password"
+      id="password"
+      name="contrasena"
+      required
+      minlength="8"
+      pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}"
+      title="Mínimo 8 caracteres con 1 mayúscula, 1 minúscula y 1 número"
+      autocomplete="new-password"
+      aria-describedby="pwd-req"
+    >
+    <p id="pwd-req">Mínimo 8 caracteres. Debe incluir mayúsculas, minúsculas y números.</p>
+  </div>
+
+  <div>
+    <label for="github">Perfil de GitHub</label>
+    <input
+      type="url"
+      id="github"
+      name="github_url"
+      placeholder="https://github.com/mi-usuario"
+      autocomplete="url"
+    >
+  </div>
+
+</fieldset>
+<fieldset>
+  <legend>Información Académica</legend>
+
+  <div>
+    <label for="semestre">Semestre actual *</label>
+    <input
+      type="number"
+      id="semestre"
+      name="semestre"
+      required
+      min="1"
+      max="10"
+      step="1"
+      value="1"
+    >
+  </div>
+
+  <div>
+    <label for="promedio">Promedio acumulado</label>
+    <input
+      type="number"
+      id="promedio"
+      name="promedio"
+      min="0"
+      max="5"
+      step="0.1"
+      placeholder="Ej: 3.0"
+    >
+  </div>
+
+  <fieldset>
+    <legend>Jornada *</legend>
+    <label>
+      <input type="radio" name="jornada" value="diurna" required> Diurna
+    </label>
+    <label>
+      <input type="radio" name="jornada" value="nocturna"> Nocturna
+    </label>
+    <label>
+      <input type="radio" name="jornada" value="virtual"> Virtual
+    </label>
+  </fieldset>
+
+  <div>
+    <label for="enfasis">Área de énfasis</label>
+    <select id="enfasis" name="area_enfasis">
+      <option value="">Seleccione un área</option>
+      <optgroup label="Desarrollo de Software">
+        <option value="web">Desarrollo Web</option>
+        <option value="movil">Desarrollo Móvil</option>
+        <option value="backend">Backend y APIs</option>
+      </optgroup>
+      <optgroup label="Datos e Infraestructura">
+        <option value="bd">Bases de Datos</option>
+        <option value="cloud">Computación en la Nube</option>
+        <option value="seguridad">Seguridad Informática</option>
+      </optgroup>
+    </select>
+  </div>
+
+</fieldset>
+<fieldset>
+  <legend>Preferencias y Perfil</legend>
+
+  <div>
+    <label for="experiencia">
+      Nivel de experiencia en programación:
+      <output id="exp-valor">5</output>/10
+    </label>
+    <input
+      type="range"
+      id="experiencia"
+      name="nivel_experiencia"
+      min="1" max="10" step="1" value="5"
+      oninput="document.getElementById('exp-valor').value = this.value"
+    >
+  </div>
+
+  <div>
+    <label for="color-perfil">Color de tema del perfil</label>
+    <input type="color" id="color-perfil" name="color_tema" value="#065A">
+  </div>
+
+  <fieldset>
+    <legend>Áreas de interés (seleccione todas las que apliquen)</legend>
+    <label><input type="checkbox" name="intereses" value="web"> Desarrollo Web</label>
+    <label><input type="checkbox" name="intereses" value="ia"> Inteligencia Artificial</label>
+    <label><input type="checkbox" name="intereses" value="data"> Ciencia de Datos</label>
+    <label><input type="checkbox" name="intereses" value="cloud"> Cloud Computing</label>
+    <label><input type="checkbox" name="intereses" value="seguridad"> Ciberseguridad</label>
+  </fieldset>
+
+  <div>
+    <label for="foto">Foto de perfil</label>
+    <input
+      type="file"
+      id="foto"
+      name="foto_perfil"
+      accept="image/jpeg, image/png, image/webp"
+      aria-describedby="foto-ayuda"
+    >
+    <p id="foto-ayuda">Formatos aceptados: JPG, PNG o WebP. Tamaño máximo: 2 MB.</p>
+  </div>
+
+  <div>
+    <label for="bio">Biografía breve</label>
+    <textarea
+      id="bio"
+      name="biografia"
+      rows="5"
+      maxlength="500"
+      placeholder="Describir brevemente el perfil académico y profesional..."
+      aria-describedby="bio-contador"
+    ></textarea>
+    <p id="bio-contador">Máximo 500 caracteres.</p>
+  </div>
+
+</fieldset>
+  <input type="hidden" name="origen" value="portafolio-html5-u2">
+  <input type="hidden" name="version_formulario" value="1.0">
+
+  <div>
+    <button type="submit">Crear mi Cuenta</button>
+    <button type="reset">Limpiar Formulario</button>
+  </div>
+
+</form>
+    </form>
+  </main>
+
+  <footer>
+    <p><small>&copy; 2026 Universidad - Ingeniería de Sistemas.</small></p>
+  </footer>
+
+</body>
+</html>

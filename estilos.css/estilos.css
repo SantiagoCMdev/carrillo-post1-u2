@@ -1,0 +1,276 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #111111;
+  line-height: 1.6;
+}
+
+/* Contenedor centrado con ancho máximo, para no ocupar todo el ancho de la pantalla */
+header,
+main,
+footer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* ---------- Header ---------- */
+header {
+  border-bottom: 2px solid #000000;
+  padding-bottom: 16px;
+}
+
+header h1 {
+  margin: 0 0 4px 0;
+  font-size: 1.8rem;
+}
+
+header p {
+  margin: 0 0 16px 0;
+  color: #333333;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: #111111;
+  text-decoration: none;
+  border-bottom: 1px solid #000000;
+}
+
+nav a:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* ---------- Secciones generales ---------- */
+section,
+aside {
+  border: 1px solid #000000;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+section h2,
+aside h2 {
+  margin-top: 0;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 8px;
+}
+
+/* ---------- Figuras e imágenes ---------- */
+figure {
+  margin: 0 0 16px 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #000000;
+  display: block;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: #333333;
+  margin-top: 6px;
+}
+
+/* ---------- Artículos (proyectos, logros) ---------- */
+article {
+  border: 1px solid #000000;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+article:last-child {
+  margin-bottom: 0;
+}
+
+article h3 {
+  margin-top: 0;
+}
+
+/* ---------- Listas ---------- */
+ul, ol, dl {
+  padding-left: 20px;
+}
+
+dt {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+dd {
+  margin-left: 0;
+}
+
+/* ---------- Video / audio ---------- */
+video, audio {
+  width: 100%;
+  border: 1px solid #000000;
+}
+
+/* ---------- Details / summary (FAQ) ---------- */
+details {
+  border: 1px solid #000000;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+mark {
+  background-color: #f0f0f0;
+  border: 1px solid #000000;
+  padding: 0 2px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  border-top: 2px solid #000000;
+  padding-top: 16px;
+  font-size: 0.9rem;
+}
+
+address {
+  font-style: normal;
+}
+
+address a {
+  color: #111111;
+}
+
+/* ==========================================================
+   Formulario (Parte 2)
+   ========================================================== */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+fieldset {
+  border: 1px solid #000000;
+  padding: 20px;
+}
+
+fieldset fieldset {
+  margin-top: 16px;
+  border: 1px solid #000000;
+  padding: 12px 16px;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 8px;
+}
+
+/* Cada campo (label + input) en su propia fila con espacio */
+form > fieldset > div {
+  margin-bottom: 16px;
+}
+
+form > fieldset > div:last-child {
+  margin-bottom: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+/* Labels de radio/checkbox van en línea, no en bloque */
+fieldset label:has(input[type="radio"]),
+fieldset label:has(input[type="checkbox"]) {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: normal;
+  margin-right: 16px;
+  margin-bottom: 8px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  color: #111111;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+  padding: 0;
+}
+
+input[type="range"] {
+  padding: 0;
+}
+
+input[type="color"] {
+  width: 60px;
+  height: 40px;
+  padding: 2px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #000000;
+  outline-offset: 1px;
+}
+
+/* Texto de ayuda bajo los campos (aria-describedby) */
+form p {
+  font-size: 0.85rem;
+  color: #333333;
+  margin: 4px 0 0 0;
+}
+
+/* Botones */
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  color: #111111;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+output {
+  font-weight: bold;
+}
