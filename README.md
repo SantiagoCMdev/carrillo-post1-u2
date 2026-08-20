@@ -1,7 +1,7 @@
 # Post-contenido - Unidad 2: HTML5 Básico - Santiago Carrillo
 
 ## Descripción
-Repositorio del laboratorio de la Unidad 2 de Programación Web —
+Repositorio del laboratorio de la Unidad 2 de Programación Web -
 Séptimo Semestre. Contiene dos partes: página de portafolio con
 etiquetas semánticas de HTML5 (parte-1-pagina-semantica/) y
 formulario de registro con validación nativa HTML5
@@ -24,7 +24,7 @@ atributos ARIA. Ver parte-2-formulario-registro/.
 ### 1. Estructura semántica de "Logros y Certificaciones" (Parte 1)
 Se eligió la **Opción A**: cada logro se marcó como un `<article>`
 independiente. Se aplicó el criterio de la guía teórica "¿tiene
-sentido por sí solo fuera del sitio?"— y la respuesta fue sí: cada
+sentido por sí solo fuera del sitio?" y la respuesta fue sí: cada
 certificación (institución emisora, fecha, contenido) es un dato
 autocontenido que podría copiarse y compartirse fuera del portafolio
 sin perder significado, tal como se comparte un certificado de forma
@@ -39,7 +39,7 @@ Se eligió la **Opción A**: video con subtítulos WebVTT mediante
 comunica más información en el mismo tiempo (expresión, entorno,
 lenguaje corporal), lo cual resulta más natural para una introducción
 personal en un portafolio. Como recurso de accesibilidad asociado
-—cumpliendo el principio "Perceptible" de WCAG se creó el archivo
+cumpliendo el principio "Perceptible" de WCAG se creó el archivo
 `intro-es.vtt` con los cues sincronizados al audio del clip, de modo
 que el contenido hablado también esté disponible como texto para
 personas con discapacidad auditiva o en entornos sin sonido.
