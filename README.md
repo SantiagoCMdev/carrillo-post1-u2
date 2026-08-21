@@ -64,4 +64,4 @@ da consistencia visual al conjunto.
 ![Página principal](parte-1-pagina-semantica/img/captura-01.png)
 
 
-![Formulario completo](parte-2-formulario-registro/img/captura-01.png)
+![Formulario completo](parte-2-formulario-registro/img/captura-02.png)
